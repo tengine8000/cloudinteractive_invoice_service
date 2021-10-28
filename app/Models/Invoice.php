@@ -16,7 +16,7 @@ class Invoice extends Model
      * @var string[]
      */
     protected $fillable = [
-        'user_id'
+        'user_id',
         'status',
         'subtotal',
         'tax_rate',
@@ -30,5 +30,13 @@ class Invoice extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the lineItem for this invoice.
+     */
+    public function lineItems()
+    {
+        return $this->hasMany(LineItem::class);
     }
 }
