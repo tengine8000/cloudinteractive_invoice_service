@@ -20,7 +20,7 @@ class CreateInvoicesTable extends Migration
             $table->integer('subtotal');
             $table->string('tax_rate');
             $table->integer('total');
-            $table->longText('notes');
+            $table->longText('notes')->nullable();
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class CreateLineItemsTable extends Migration
             $table->string('description');
             $table->integer('rate');
             $table->integer('quantity');
-            $table->longText('additional_info');
+            $table->longText('additional_info')->nullable();
             $table->timestamps();
         });
     }
